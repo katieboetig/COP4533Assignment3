@@ -1,0 +1,20 @@
+Test1
+python3 src/hvlcs.py < tests/test$i.in > tests/test$i.out  0.02s user 0.01s system 50% cpu 0.057 total
+Test2
+python3 src/hvlcs.py < tests/test$i.in > tests/test$i.out  0.02s user 0.00s system 94% cpu 0.022 total
+Test3
+python3 src/hvlcs.py < tests/test$i.in > tests/test$i.out  0.02s user 0.00s system 95% cpu 0.021 total
+Test4
+python3 src/hvlcs.py < tests/test$i.in > tests/test$i.out  0.02s user 0.00s system 94% cpu 0.021 total
+Test5
+python3 src/hvlcs.py < tests/test$i.in > tests/test$i.out  0.02s user 0.00s system 94% cpu 0.021 total
+Test6
+python3 src/hvlcs.py < tests/test$i.in > tests/test$i.out  0.02s user 0.00s system 94% cpu 0.021 total
+Test7
+python3 src/hvlcs.py < tests/test$i.in > tests/test$i.out  0.02s user 0.00s system 94% cpu 0.024 total
+Test8
+python3 src/hvlcs.py < tests/test$i.in > tests/test$i.out  0.02s user 0.01s system 92% cpu 0.028 total
+Test9
+python3 src/hvlcs.py < tests/test$i.in > tests/test$i.out  0.03s user 0.01s system 81% cpu 0.042 total
+Test10
+python3 src/hvlcs.py < tests/test$i.in > tests/test$i.out  0.02s user 0.00s system 95% cpu 0.029 total
