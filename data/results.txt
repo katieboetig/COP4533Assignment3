@@ -1,4 +1,4 @@
-Test1
+Test1 
 python3 src/hvlcs.py < tests/test$i.in > tests/test$i.out  0.02s user 0.01s system 50% cpu 0.057 total
 Test2
 python3 src/hvlcs.py < tests/test$i.in > tests/test$i.out  0.02s user 0.00s system 94% cpu 0.022 total
