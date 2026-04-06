@@ -19,10 +19,10 @@ x2 v2
 xK vK  
 A  
 B  
-• K is the number of characters in the alphabet.  
-• Each of the next K lines contains a character and its value.  
-• A is the first string.  
-• B is the second string.
+- K is the number of characters in the alphabet.  
+- Each of the next K lines contains a character and its value.  
+- A is the first string.  
+- B is the second string.
 
 **Output**  
 Print: (a) a single integer: the maximum value of a common subsequence of A and B.  
@@ -61,19 +61,44 @@ Case 1: Base Case (A and/or B have length 0\)
 Case 2: Match (A\[i\]=B\[j\])  
 From here 3 options: accept it and move onto next value, skip to next in A to see if more optimal solution, or skip to next in B to see if more optimal solution (select whichever is maximum value)  
 OPT(i, j)= max{ OPT(i-1, j-1)+V(A\[i\]), OPT(i-1, j), OPT(i, j-1)}  
-Note that V(B\[j\]) has same value as V(A\[i\]) so you could swap and it wouldn’t make a difference  
+Note that V(B\[j\]) has same value as V(A\[i\]) so you could swap and it wouldn't make a difference  
 Case 3: No Match (A\[i\]\!=B\[j\])  
 Skip to the next in the sequence for either A or B (whichever produces higher OPT)  
 OPT(i,j)=max{ OPT(i-1,j), OPT(i, j-1)}
 
 Overall recurrence equation:  
 \*OPT(i, j)={ 0 if i=0 or if j=0, max{ OPT(i-1, j-1)+V(A\[i\]), OPT(i-1, j), OPT(i, j-1)} if A\[i\]=B\[j\], max{ OPT(i-1,j), OPT(i, j-1)} if A\[i\] \!= B\[j\]}  
-\*for better readability the file “recurrance.png” has it written out in standard piece-wise form
+\*for better readability the file "recurrance.png" has it written out in standard piece-wise form
 
 **Question 3: Big-Oh**  
 Give pseudocode of an algorithm to compute the length of the HVLCS of given strings A  
-and B. What is the runtime of your algorithm?  
-Submission and Deliverables (GitHub)
+and B. What is the runtime of your algorithm?
+
+HVLCS(A, B, char_values):  
+    n = len(A), m = len(B)  
+    
+    for i = 0 to n:  
+        for j = 0 to m:  
+            dp[i][j] = 0  
+
+    for i = 1 to n:  
+        for j = 1 to m:  
+            if A[i] == B[j]:  
+                dp[i][j] = max(dp[i-1][j-1] + V(A[i]), dp[i-1][j], dp[i][j-1])  
+            else:  
+                dp[i][j] = max(dp[i-1][j], dp[i][j-1])  
+
+    return dp[n][m]  
+
+Runtime Analysis:  
+The algorithm is O(n · m), where n = |A| and m = |B|.  
+- Initializing the DP table takes O(n · m) time.  
+- Filling the table requires iterating over all (i, j) pairs — that's n · m cells total. Each cell does a constant amount of work (one comparison, at most 3 max operations, one lookup), so filling the table is O(n · m).  
+- Total: O(n · m)  
+
+The space complexity is also O(n · m) for the DP table.
+
+**Submission and Deliverables (GitHub)**
 
 Running Instructions:  
 Run all tests at once:   
@@ -85,5 +110,4 @@ done
 Single Test:   
 time python src/hvlcs.py \< tests/example.in \> tests/example.out
 
-\*note: "python3" might need to replace "python" if working on MacOS.  
-
+\*note: "python3" might need to replace "python" if working on MacOS.
