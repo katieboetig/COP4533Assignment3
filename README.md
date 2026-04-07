@@ -1,3 +1,5 @@
+Names & IDs: -Stephanie Teipel: 69604935 -Katie Boetig: 52055316
+
 Programming Assignment: Highest Value Longest Common Sequence
 
 **Problem Statement**  
